@@ -21,7 +21,7 @@ submitBtn.addEventListener("click", function () {
   output.textContent = `Start the game " ${input.value} "`;
 });
 // Generate a random number between 1 and 25
-let randomNumber = Math.floor(Math.random() * 25) + 1;
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 // Initialize the number of guesses to zero
 let numGuesses = 0;
@@ -31,9 +31,9 @@ function checkGuess() {
   let userGuess = parseInt(document.getElementById("userGuess").value);
 
   // Check if the guess is valid
-  if (isNaN(userGuess) || userGuess < 1 || userGuess > 25) {
+  if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
     document.getElementById("result").innerHTML =
-      "Please enter a valid number from 1 to 25";
+      "Please enter a valid number from 1 to 100";
     return;
   }
 
@@ -60,7 +60,7 @@ clear.value=""
 
 function restart() {
   // Reset the random number and number of guesses
-  randomNumber = Math.floor(Math.random() * 25) + 1;
+  randomNumber = Math.floor(Math.random() * 100) + 1;
   numGuesses = 0;
 
   // Clear the input field and result message
